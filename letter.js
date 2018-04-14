@@ -13,7 +13,9 @@ var Letter = function(letter){
 		
 	};
 	this.checkGuess = function(myChar){
+		//console.log(mychar,this.character);
 		if(myChar === this.character){
+			
 			this.guessed = true;
 		}
 	};
