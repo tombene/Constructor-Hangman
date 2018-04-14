@@ -1,6 +1,6 @@
 # Constructor Hangman
-
-## Instructions
+![Image of appended log file](/images/itsWorking.jpg)
+## How it Works
 
 1. Receive user input using the `inquirer` npm package.
 
@@ -29,8 +29,4 @@
   * Randomly selects a word and uses the `Word` constructor to store it
 
   * Prompts the user for each guess and keeps track of the user's remaining guesses
-
-3. `Letter.js` *should not* `require` any other files.
-
-4. `Word.js` *should only* require `Letter.js`
 

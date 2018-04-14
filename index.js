@@ -35,7 +35,7 @@ var askQuestion = function() {
       }
     ]).then(function(res) {
 			// Make the guess with letterGuess method
-			currentWord.letterGuess(res.guess.toString());
+			currentWord.letterGuess(res.guess);
       // printInfo result of guess
 			currentWord.displayWord();
 			

@@ -6,6 +6,7 @@ var Letter = function(letter){
 			return this.character;
 		}
 		if(this.character === ' '){
+			this.guessed = true;
 			return ' ';
 		}else{
 			return "_";
