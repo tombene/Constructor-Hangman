@@ -9,9 +9,15 @@ var selectedWord = words[Math.floor(Math.random() * words.length)];
 var currentWord = new Word(selectedWord);
 
 var count = 0;
+var success = false;
 
 var askQuestion = function() {
-  // if statement to ensure that our questions are only asked five times
+	// check if word is guessed
+	if(currentWord.wordGuessed()){
+		count = 10;
+		success = true;
+	}
+  // if statement to ensure that our questions are only asked ten times
   if (count < 10) {
     // runs inquirer and asks the user a series of questions whose replies are
     // stored within the variable answers inside of the .then statement
@@ -31,7 +37,8 @@ var askQuestion = function() {
 			// Make the guess with letterGuess method
 			currentWord.letterGuess(res.guess.toString());
       // printInfo result of guess
-      currentWord.displayWord();
+			currentWord.displayWord();
+			
       // add one to count to increment our recursive loop by one
       count++;
       // run the askquestion function again so as to either end the loop or ask the questions again
@@ -41,7 +48,12 @@ var askQuestion = function() {
     // when the code has been run five times
   }
   else {
-    console.log("All out of guesses.");
+		if(success){
+			console.log("Congrats you guessed it");
+		}else{
+			console.log("All out of guesses.");
+		}
+    
   }
 };
 

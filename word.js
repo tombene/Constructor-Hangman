@@ -14,6 +14,14 @@ var Word = function(selectedWord){
 		for(let i = 0; i < this.word.length; i++){
 			this.word[i].checkGuess(guess);
 		}
+	};
+	this.wordGuessed = function(){
+		for(let i = 0; i < this.word.length; i++){
+			if(!this.word[i].checkIfGuessed()){
+				return false;	
+			}
+		}
+		return true;
 	}
 }
 

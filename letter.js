@@ -19,6 +19,9 @@ var Letter = function(letter){
 			this.guessed = true;
 		}
 	};
+	this.checkIfGuessed = function(){
+		return this.guessed;
+	}
 }
 
 module.exports = Letter;
